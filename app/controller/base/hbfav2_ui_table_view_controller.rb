@@ -1,7 +1,7 @@
 module HBFav2
   class UITableViewController < UITableViewController
     attr_accessor :tracked_view_name
-    include HBFav2::GoogleAnalytics
+    # include HBFav2::GoogleAnalytics
     include HBFav2::HomeCondition
     include HBFav2::BackGesture
     include HBFav2::BackgroundEvent
@@ -19,7 +19,7 @@ module HBFav2
 
     def viewDidAppear(animated)
       super
-      track_pageview(@tracked_view_name)
+      # track_pageview(@tracked_view_name)
     end
   end
 end
