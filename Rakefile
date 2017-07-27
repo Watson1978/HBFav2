@@ -14,7 +14,6 @@ Motion::Project::App.setup do |app|
   app.name = 'HBFav'
   app.version = "2.9.3"
   app.short_version = "2.9.3"
-  app.sdk_version = '10.1'
   app.deployment_target = '8.0'
   app.device_family = [:iphone, :ipad]
   app.identifier = "HBFav"
@@ -25,18 +24,6 @@ Motion::Project::App.setup do |app|
   ## Very experimental
   app.archs['iPhoneOS'] << 'arm64'
   app.archs['iPhoneSimulator'] << 'x86_64'
-
-  app.development do
-    app.provisioning_profile = '/Users/naoya/Dropbox/HBFav/HBFav_with_Push_Notification.mobileprovision'
-    app.codesign_certificate='iPhone Developer: Naoya Ito (DCUZR42N2P)'
-    app.entitlements['aps-environment'] = 'development'
-  end
-
-  app.release do
-    app.provisioning_profile = '/Users/naoya/Dropbox/HBFav/HBFav_with_Push_Notification_for_Production.mobileprovision'
-    app.codesign_certificate='iPhone Distribution: Naoya Ito (KC9234ZWM8)'
-    app.entitlements['aps-environment'] = 'production'
-  end
 
   app.interface_orientations = [:portrait]
   app.info_plist['UISupportedInterfaceOrientations~ipad'] = [
