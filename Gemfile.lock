@@ -64,7 +64,6 @@ GEM
     motion-cocoapods (1.9.0)
       cocoapods (>= 1.0.0)
     motion-require (0.0.6)
-    motion-testflight (1.5)
     nanaimo (0.2.3)
     nap (1.1.0)
     netrc (0.7.8)
@@ -89,9 +88,8 @@ DEPENDENCIES
   motion-cocoapods
   motion-my_env!
   motion-require
-  motion-testflight
   rake
   sugarcube
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
