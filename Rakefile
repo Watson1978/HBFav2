@@ -14,7 +14,7 @@ Motion::Project::App.setup do |app|
   app.name = 'HBFav'
   app.version = "2.9.3"
   app.short_version = "2.9.3"
-  app.deployment_target = '8.0'
+  app.deployment_target = '9.0'
   app.device_family = [:iphone, :ipad]
   app.identifier = "HBFav"
   app.prerendered_icon = true
@@ -70,7 +70,6 @@ Motion::Project::App.setup do |app|
       'CFBundleURLSchemes' => ['pocketapp16058']
     }
   ]
-  app.info_plist['MinimumOSVersion'] = '7.0'
   app.info_plist['UIViewControllerBasedStatusBarAppearance'] = false
   app.info_plist['UIStatusBarStyle'] = "UIStatusBarStyleLightContent"
   app.info_plist['UIBackgroundModes'] = ['fetch', 'remote-notification']
