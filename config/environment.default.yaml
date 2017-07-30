@@ -9,14 +9,6 @@ hatena:
   consumer_key:
   consumer_secret:
 
-parse:
-  development:
-    application_id:
-    client_key:
-  production:
-    application_id:
-    client_key:
-
 readability:
   api_token:
 
