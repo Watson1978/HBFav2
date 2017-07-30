@@ -65,10 +65,8 @@ module HBFav2
           end
         end
       when UIApplicationStateInactive then
-        PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         self.handleNotificationPayload(userInfo)
       when UIApplicationStateBackground then
-        PFPush.handlePush(userInfo)
       end
     end
 

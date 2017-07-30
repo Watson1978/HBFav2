@@ -9,7 +9,6 @@ class AppDelegate
 
     self.configure_pocket_service(app_config)
     self.configure_google_api_service(app_config)
-    self.configure_parse_service(app_config, launchOptions)
 
     self.initialize_audio_session
     self.configure_navigation_bar
@@ -127,22 +126,6 @@ class AppDelegate
 
   def configure_google_api_service(app_config)
     GoogleAPI.sharedAPI.api_key = app_config.vars['google']['api_key']
-  end
-
-  def configure_parse_service(app_config, launchOptions)
-    ## initialize Parse.com
-    if development?
-      Parse.setApplicationId(
-        app_config.vars['parse']['development']['application_id'],
-        clientKey:app_config.vars['parse']['development']['client_key'],
-      )
-    else
-      Parse.setApplicationId(
-        app_config.vars['parse']['production']['application_id'],
-        clientKey:app_config.vars['parse']['production']['client_key'],
-      )
-    end
-    PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
   end
 
   def initialize_audio_session

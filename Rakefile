@@ -117,18 +117,4 @@ Motion::Project::App.setup do |app|
   app.entitlements['keychain-access-groups'] = [
     app.seed_id + '.' + app.identifier
   ]
-
-  ## Parse.com
-  app.vendor_project(
-    'vendor/Bolts.framework',
-    :static,
-    :products => ['Bolts'],
-    :headers_dir => 'Headers'
-  )
-  app.vendor_project(
-    'vendor/Parse.framework',
-    :static,
-    :products => ['Parse'],
-    :headers_dir => 'Headers'
-  )
 end
