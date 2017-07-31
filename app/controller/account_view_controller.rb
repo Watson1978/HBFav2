@@ -57,12 +57,6 @@ class AccountViewController < HBFav2::UIViewController
             :action => 'open_hatena',
             :accessoryType =>  HTBHatenaBookmarkManager.sharedManager.authorized ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone
           },
-          {
-            :label  => "Pocket",
-            :detail => PocketAPI.sharedAPI.username || "未設定",
-            :action => 'open_pocket',
-            :accessoryType => PocketAPI.sharedAPI.loggedIn? ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone
-          },
         ]
       }
     ]
@@ -154,23 +148,6 @@ class AccountViewController < HBFav2::UIViewController
           @profile_view.menuTable.reloadData
         },
         failure: lambda {|error| NSLog(error.localizedDescription) }
-      )
-    end
-  end
-
-  def open_pocket
-    if PocketAPI.sharedAPI.loggedIn?
-      self.navigationController.pushViewController(PocketViewController.alloc.initWithStyle(UITableViewStyleGrouped), animated:true)
-    else
-      PocketAPI.sharedAPI.loginWithHandler(
-        lambda do |pocket, error|
-          if error.nil?
-          else
-            NSLog(error.localizedDescription)
-          end
-          self.initialize_data_source
-          @profile_view.menuTable.reloadData
-        end
       )
     end
   end

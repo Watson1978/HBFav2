@@ -5,8 +5,6 @@ PODS:
   - JASidePanels (1.3.2)
   - MPNotificationView (1.1.1)
   - NSDate+TimeAgo (1.0.2)
-  - PocketAPI (1.0.2):
-    - SFHFKeychainUtils (= 0.0.1)
   - SFHFKeychainUtils (0.0.1)
   - SVProgressHUD (0.9)
   - TTTAttributedLabel (2.0.0)
@@ -18,7 +16,6 @@ DEPENDENCIES:
   - JASidePanels
   - MPNotificationView (from `https://github.com/naoya/MPNotificationView.git`, branch `HBFav`)
   - NSDate+TimeAgo
-  - PocketAPI (from `git@github.com:naoya/Pocket-ObjC-SDK.git`, branch `cocoapods-dependency`)
   - SVProgressHUD
   - TTTAttributedLabel (from `git@github.com:TTTAttributedLabel/TTTAttributedLabel.git`)
   - TUSafariActivity
@@ -27,9 +24,6 @@ EXTERNAL SOURCES:
   MPNotificationView:
     :branch: HBFav
     :git: https://github.com/naoya/MPNotificationView.git
-  PocketAPI:
-    :branch: cocoapods-dependency
-    :git: git@github.com:naoya/Pocket-ObjC-SDK.git
   TTTAttributedLabel:
     :git: git@github.com:TTTAttributedLabel/TTTAttributedLabel.git
 
@@ -37,9 +31,6 @@ CHECKOUT OPTIONS:
   MPNotificationView:
     :commit: 5c7eadc2082254aefd9fccfb50276f116b572dd7
     :git: https://github.com/naoya/MPNotificationView.git
-  PocketAPI:
-    :commit: 2924afe59348f67dbc1a83c01bcd44c502b9222b
-    :git: git@github.com:naoya/Pocket-ObjC-SDK.git
   TTTAttributedLabel:
     :commit: 636de1ef38bce6656a3f9989426ef5eee7a5a42d
     :git: git@github.com:TTTAttributedLabel/TTTAttributedLabel.git
@@ -50,12 +41,11 @@ SPEC CHECKSUMS:
   JASidePanels: c8f5b130e18d51ee3de988d1c1fad2f88e0b0d21
   MPNotificationView: 0f342a4a5211f75ba9b395552af6c121b4730249
   NSDate+TimeAgo: 7aa9c53dd3d7c55b5a41c1819a11638344adfbc8
-  PocketAPI: 9b5ce77a041a37c57a7253dca7a2ea5cc2a80f83
   SFHFKeychainUtils: 9576b411a79a058f4d5381ace6f3242b9a62e664
   SVProgressHUD: 7038ae9d6a0bd2c87560d2699eba642eef82d41e
   TTTAttributedLabel: 92aaa37822677380b7ec0baff50bd8010eef08f8
   TUSafariActivity: dd346df54a8f1cbb4fd05d504c76d47225fac99e
 
-PODFILE CHECKSUM: a257793ad7f1030e615e770104b47c10876914fe
+PODFILE CHECKSUM: 4c2319b23cd83740aac5c720a4f4e27a0eacef74
 
 COCOAPODS: 1.2.1

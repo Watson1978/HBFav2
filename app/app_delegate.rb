@@ -7,7 +7,6 @@ class AppDelegate
     NSLog("RUBYMOTION_ENV: " + RUBYMOTION_ENV)
     app_config = ApplicationConfig.sharedConfig
 
-    self.configure_pocket_service(app_config)
     self.configure_google_api_service(app_config)
 
     self.initialize_audio_session
@@ -111,12 +110,6 @@ class AppDelegate
     !development?
   end
 
-  def configure_pocket_service(app_config)
-    PocketAPI.sharedAPI.setConsumerKey(
-      app_config.vars["pocket"]["consumer_key"]
-    )
-  end
-
   def configure_hatena_bookmark_service(app_config)
     HTBHatenaBookmarkManager.sharedManager.setConsumerKey(
       app_config.vars['hatena']['consumer_key'],
@@ -171,10 +164,6 @@ class AppDelegate
   def application(application, openURL:url, sourceApplication:sourceApplication, annotation:annotation)
     if matches = url.absoluteString.match(%r{^hbfav:/entry/(https?://.*)})
       self.presentWebViewControllerWithURL(matches[1])
-    else
-      if PocketAPI.sharedAPI.handleOpenURL(url)
-        return true
-      end
     end
     return true
   end

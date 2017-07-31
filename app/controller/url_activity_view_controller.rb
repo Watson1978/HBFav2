@@ -3,7 +3,6 @@ class URLActivityViewController < UIActivityViewController
   def initWithDefaultActivities(activityItems)
     safari = TUSafariActivity.new
     hatena = HatenaBookmarkActivity.new
-    pocket = PocketActivity.new
     chrome = ARChromeActivity.new.tap do |activity|
       activity.activityTitle = "Chromeで開く"
     end
@@ -14,7 +13,6 @@ class URLActivityViewController < UIActivityViewController
         safari,
         chrome,
         hatena,
-        pocket,
       ]
     )
 
