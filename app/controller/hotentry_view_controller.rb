@@ -148,7 +148,7 @@ class HotentryViewController < HBFav2::UITableViewController
   def dealloc
     if @connection.present?
       @connection.cancel
-      App.shared.networkActivityIndicatorVisible = false
+      UIApplication.sharedApplication.networkActivityIndicatorVisible = false
     end    
     self.unreceive_application_switch_notification
     super
