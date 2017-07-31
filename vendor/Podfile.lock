@@ -19,7 +19,6 @@ DEPENDENCIES:
   - MPNotificationView (from `https://github.com/naoya/MPNotificationView.git`, branch `HBFav`)
   - NSDate+TimeAgo
   - PocketAPI (from `git@github.com:naoya/Pocket-ObjC-SDK.git`, branch `cocoapods-dependency`)
-  - SFHFKeychainUtils
   - SVProgressHUD
   - TTTAttributedLabel (from `git@github.com:TTTAttributedLabel/TTTAttributedLabel.git`)
   - TUSafariActivity
@@ -57,6 +56,6 @@ SPEC CHECKSUMS:
   TTTAttributedLabel: 92aaa37822677380b7ec0baff50bd8010eef08f8
   TUSafariActivity: dd346df54a8f1cbb4fd05d504c76d47225fac99e
 
-PODFILE CHECKSUM: fdb62341501944b98cc9c446f7b3590b453f5530
+PODFILE CHECKSUM: a257793ad7f1030e615e770104b47c10876914fe
 
 COCOAPODS: 1.2.1

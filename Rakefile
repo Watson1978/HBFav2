@@ -49,7 +49,6 @@ Motion::Project::App.setup do |app|
   app.info_plist['UIBackgroundModes'] = ['fetch', 'remote-notification']
 
   app.pods do
-    pod 'SFHFKeychainUtils'
     pod 'PocketAPI', :git => 'git@github.com:naoya/Pocket-ObjC-SDK.git', :branch => 'cocoapods-dependency'
     pod 'NSDate+TimeAgo'
     pod 'TUSafariActivity'
