@@ -2,7 +2,7 @@ module HBFav2
   class WebView < UIWebView
     def stopLoading
       super
-      App.shared.networkActivityIndicatorVisible = false
+      # App.shared.networkActivityIndicatorVisible = false
     end
 
     def dealloc

@@ -226,7 +226,7 @@ class WebViewController < HBFav2::UIViewController
   # UIWebView delegate
   #
   def webViewDidStartLoad (webView)
-    App.shared.networkActivityIndicatorVisible = true
+    # App.shared.networkActivityIndicatorVisible = true
   end
 
   def webViewDidFinishLoad (webView)
@@ -235,7 +235,7 @@ class WebViewController < HBFav2::UIViewController
     if @backButton.present?
       @backButton.enabled = webView.canGoBack
     end
-    App.shared.networkActivityIndicatorVisible = false
+    # App.shared.networkActivityIndicatorVisible = false
     @indicator.stopAnimating
   end
 

@@ -49,9 +49,9 @@ class BookmarksManager
       )
     end
 
-    App.shared.networkActivityIndicatorVisible = true
+    # App.shared.networkActivityIndicatorVisible = true
     group.wait
-    App.shared.networkActivityIndicatorVisible = false
+    # App.shared.networkActivityIndicatorVisible = false
 
     Response.new(@responses)
   end
