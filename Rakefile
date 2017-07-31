@@ -56,7 +56,6 @@ Motion::Project::App.setup do |app|
     pod 'SVProgressHUD'
     pod 'JASidePanels'
     pod 'TTTAttributedLabel', :git => 'git@github.com:TTTAttributedLabel/TTTAttributedLabel.git'
-    pod 'AFNetworking', '~> 1.3'
     pod 'ARChromeActivity'
     pod 'HatenaBookmarkSDK'
     pod 'MPNotificationView', :git => 'https://github.com/naoya/MPNotificationView.git', :branch => 'HBFav'
