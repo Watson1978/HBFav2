@@ -58,7 +58,7 @@ Motion::Project::App.setup do |app|
     pod 'TTTAttributedLabel', :git => 'git@github.com:TTTAttributedLabel/TTTAttributedLabel.git'
     pod 'AFNetworking', '~> 1.3'
     pod 'ARChromeActivity'
-    pod 'HatenaBookmarkSDK', :git => 'git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git'
+    pod 'HatenaBookmarkSDK'
     pod 'MPNotificationView', :git => 'https://github.com/naoya/MPNotificationView.git', :branch => 'HBFav'
   end
 
