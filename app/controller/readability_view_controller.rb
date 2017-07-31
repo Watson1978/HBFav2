@@ -82,7 +82,7 @@ class ReadabilityViewController < HBFav2::UIViewController
 
     if @connection.present?
       @connection.cancel
-      # App.shared.networkActivityIndicatorVisible = false
+      UIApplication.sharedApplication.networkActivityIndicatorVisible = false
     end
 
     if @webview.loading?
@@ -91,11 +91,11 @@ class ReadabilityViewController < HBFav2::UIViewController
   end
 
   def webViewDidStartLoad (webView)
-    # App.shared.networkActivityIndicatorVisible = true
+    UIApplication.sharedApplication.networkActivityIndicatorVisible = true
   end
 
   def webViewDidFinishLoad (webView)
-    # App.shared.networkActivityIndicatorVisible = false
+    UIApplication.sharedApplication.networkActivityIndicatorVisible = false
     @indicator.stopAnimating
 
     ## 画面遷移後に begin_fullscreen が始まってしまい、ステータスバーが消えることがある

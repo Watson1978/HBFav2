@@ -46,7 +46,7 @@ module HBFav2
 
     def stopLoading
       super
-      # App.shared.networkActivityIndicatorVisible = false
+      UIApplication.sharedApplication.networkActivityIndicatorVisible = false
     end
 
     def dealloc
