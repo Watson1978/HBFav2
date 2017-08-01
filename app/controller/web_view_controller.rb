@@ -35,8 +35,6 @@ class WebViewController < HBFav2::UIViewController
       v.startAnimating
     end
 
-    self.navigationItem.rightBarButtonItem = ReadabilityBarButtonItem.alloc.initWithTarget(self, action:'open_readability')
-
     if self.on_modal == true
 
       UIBarButtonItem.stop.tap do |btn|
@@ -175,18 +173,6 @@ class WebViewController < HBFav2::UIViewController
   def present_modal (controller)
     @view_pushed = true
     self.presentViewController(controller, animated:true, completion:nil)
-  end
-
-  def open_readability
-    readability = ReadabilityViewController.new.tap do |c|
-      c.entry = {:title => @bookmark.title, :url => @bookmark.link}
-    end
-
-    controller = HBFav2NavigationController.alloc.initWithRootViewController(readability)
-    controller.rounded_corners = false
-
-    ## 本当は pushViewController にしたいが JASidePanels との相性でフルスクリーンがムズイので modal
-    present_modal(controller)
   end
 
   def open_bookmark
