@@ -80,14 +80,14 @@ class AccountConfigViewController < Formotion::FormController
   def save
     data = self.form.render
     if data["hatena_id"].blank?
-      App.alert("はてなIDは必須です")
+      BW::App.alert("はてなIDは必須です")
     else
       buser = User.new({ :name => data["hatena_id"] })
       buser.fetch_status do |status|
         if status == 404
-          App.alert("指定されたユーザーが見つかりません")
+          BW::App.alert("指定されたユーザーが見つかりません")
         elsif (status == 403)
-          App.alert("非公開設定のアカウントは利用できません")
+          BW::App.alert("非公開設定のアカウントは利用できません")
         else
           user = ApplicationUser.sharedUser
           previous_id = user.hatena_id

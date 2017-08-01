@@ -66,7 +66,7 @@ class NotificationConfigViewController < Formotion::FormController
   def save
     data = self.form.render
     if data["webhook_key"].blank?
-      App.alert("キーは必須です")
+      BW::App.alert("キーは必須です")
     else
       user = ApplicationUser.sharedUser
       user.webhook_key = data["webhook_key"]

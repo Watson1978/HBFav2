@@ -28,7 +28,7 @@ class StarsViewController < HBFav2::UITableViewController
         end
         view.reloadData
       else
-        App.alert(response.error_message)
+        BW::App.alert(response.error_message)
       end
     end
   end

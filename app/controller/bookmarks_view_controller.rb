@@ -23,11 +23,11 @@ class BookmarksViewController < HBFav2::UITableViewController
 
       Dispatch::Queue.main.sync do
         if not response.ok?
-          App.alert(response.message)
+          BW::App.alert(response.message)
         elsif ApplicationUser.sharedUser.hide_nocomment_bookmarks? && @bookmarks.comments.size == 0
-          App.alert("コメントがありません")
+          BW::App.alert("コメントがありません")
         elsif @bookmarks.all.size == 0
-          App.alert("ブックマークが全てプライベートモード、もしくはコメント非表示設定のエントリーです")
+          BW::App.alert("ブックマークが全てプライベートモード、もしくはコメント非表示設定のエントリーです")
         end
 
         if ApplicationUser.sharedUser.hide_nocomment_bookmarks?

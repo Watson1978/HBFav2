@@ -93,7 +93,7 @@ class BookmarkViewController < HBFav2::UIViewController
               self.bookmark = bm
               @bookmarkView.bookmark = bm
             else
-              App.alert("ブックマークが見つかりません。時間をおいて再度試行してください")
+              BW::App.alert("ブックマークが見つかりません。時間をおいて再度試行してください")
             end
           end
         end
