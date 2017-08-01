@@ -83,9 +83,9 @@ class TimelineViewController < HBFav2::UITableViewController
           @footer_indicator.startAnimating
         else
           if home?
-            App.alert("表示するブックマークがありません。はてな上でお気に入りユーザーを追加してください")
+            BW::App.alert("表示するブックマークがありません。はてな上でお気に入りユーザーを追加してください")
           else
-            App.alert("表示するブックマークがありません。")
+            BW::App.alert("表示するブックマークがありません。")
           end
         end
       end

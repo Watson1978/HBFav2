@@ -51,7 +51,7 @@ class FeedManager
         else
           ## 触っててウザいので出さない
           # Dispatch::Queue.main.async {
-          #   App.alert(response.error_message)
+          #   BW::App.alert(response.error_message)
           # }
         end
         Dispatch::Queue.main.async {

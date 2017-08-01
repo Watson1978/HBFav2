@@ -47,7 +47,7 @@ class ReadabilityViewController < HBFav2::UIViewController
       if response.ok? and @webview
         @webview.loadHTMLString(html, baseURL:entry[:url].nsurl)
       else
-        App.alert("変換に失敗しました: " + response.status_code.to_s)
+        BW::App.alert("変換に失敗しました: " + response.status_code.to_s)
         if @indicator.present?
           @indicator.stopAnimating
         end
