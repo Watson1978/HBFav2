@@ -3,8 +3,5 @@ hatena:
   consumer_key:
   consumer_secret:
 
-readability:
-  api_token:
-
 google:
   api_key:
