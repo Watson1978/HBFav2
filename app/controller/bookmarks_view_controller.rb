@@ -138,21 +138,17 @@ class BookmarksViewController < HBFav2::UITableViewController
     bookmarks(section).size
   end
 
-  if UIDevice.currentDevice.ios7_or_later?
-    def tableView(tableView, heightForHeaderInSection:section)
-      if @bookmarks.has_popular_bookmarks? or @bookmarks.has_followers_bookmarks?
-        SectionHeaderView.heightForHeader
-      else
-        0
-      end
+  def tableView(tableView, heightForHeaderInSection:section)
+    if @bookmarks.has_popular_bookmarks? or @bookmarks.has_followers_bookmarks?
+      SectionHeaderView.heightForHeader
+    else
+      0
     end
+  end
 
-    def tableView(tableView, viewForHeaderInSection:section)
-      if UIDevice.currentDevice.ios7_or_later?
-        SectionHeaderView.new.tap do |label|
-          label.text = headerLabel(section)
-        end
-      end
+  def tableView(tableView, viewForHeaderInSection:section)
+    SectionHeaderView.new.tap do |label|
+      label.text = headerLabel(section)
     end
   end
 

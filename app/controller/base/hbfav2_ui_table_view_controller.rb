@@ -8,10 +8,8 @@ module HBFav2
       super
       self.navigationItem.backBarButtonItem = NavigationBackButton.create
 
-      if UIDevice.currentDevice.ios7_or_later?
-        self.tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 0)
-        self.tableView.separatorColor = '#ddd'.uicolor
-      end
+      self.tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 0)
+      self.tableView.separatorColor = '#ddd'.uicolor
     end
 
     def willAnimateRotationToInterfaceOrientation(orientation, duration:duration)

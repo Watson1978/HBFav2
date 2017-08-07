@@ -8,9 +8,7 @@ class AppInfoViewController < HBFav2::UIViewController
     self.title = "アプリについて"
     self.tracked_view_name = "AppInfo"
 
-    if UIDevice.currentDevice.ios7_or_later?
-      self.edgesForExtendedLayout = UIRectEdgeNone
-    end
+    self.edgesForExtendedLayout = UIRectEdgeNone
 
     @dataSource = [
       {

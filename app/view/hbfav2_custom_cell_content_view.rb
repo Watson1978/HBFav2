@@ -5,8 +5,6 @@ module HBFav2
         self.superview.superview.drawRectContent(rect)
       elsif UIDevice.currentDevice.ios7_or_later?
         self.superview.superview.superview.drawRectContent(rect)
-      else
-        self.superview.superview.drawRectContent(rect)
       end
     end
   end

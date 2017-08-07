@@ -10,9 +10,7 @@ class AccountViewController < HBFav2::UIViewController
     self.navigationItem.title = @user.name
     self.tracked_view_name = "Account"
 
-    if UIDevice.currentDevice.ios7_or_later?
-      self.edgesForExtendedLayout = UIRectEdgeNone
-    end
+    self.edgesForExtendedLayout = UIRectEdgeNone
 
     self.initialize_data_source
 

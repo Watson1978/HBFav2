@@ -14,14 +14,10 @@ class UIDevice
   end
 
   def ios7_or_later?
-    gt?("7.0")
+    true
   end
 
   def ios8_or_later?
-    gt?("8.0")
-  end
-
-  def ios6_or_earlier?
-    !ios7_or_later?
+    true
   end
 end

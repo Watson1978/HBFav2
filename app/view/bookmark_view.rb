@@ -34,10 +34,6 @@ module HBFav2
         @nameLabel = UILabel.new.tap do |v|
           v.frame = CGRectZero
           v.font = ApplicationConfig.sharedConfig.boldApplicationFontOfSize(18)
-          unless UIDevice.currentDevice.ios7_or_later?
-            v.shadowColor = UIColor.whiteColor
-            v.shadowOffset = [0, 1]
-          end
           v.backgroundColor = UIColor.clearColor
         end
         @headerView << @nameLabel
@@ -130,24 +126,18 @@ module HBFav2
 
         @bodyView << @usersButton = UIButton.buttonWithType(UIButtonTypeRoundedRect).tap do |button|
           button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft
-          if UIDevice.currentDevice.ios7_or_later?
-            button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0)
-            button.titleLabel.font = ApplicationConfig.sharedConfig.systemFontOfSize(18)
-          else
-            button.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
-          end
+          button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0)
+          button.titleLabel.font = ApplicationConfig.sharedConfig.systemFontOfSize(18)
         end
 
-        if UIDevice.currentDevice.ios7_or_later?
-          @usersButtonBorderTop = UIView.new.tap do |v|
-            v.backgroundColor = '#ddd'.uicolor
-            @bodyView << v
-          end
+        @usersButtonBorderTop = UIView.new.tap do |v|
+          v.backgroundColor = '#ddd'.uicolor
+          @bodyView << v
+        end
 
-          @usersButtonBorderBottom = UIView.new.tap do |v|
-            v.backgroundColor = '#ddd'.uicolor
-            @bodyView << v
-          end
+        @usersButtonBorderBottom = UIView.new.tap do |v|
+          v.backgroundColor = '#ddd'.uicolor
+          @bodyView << v
         end
       end
       self
@@ -320,10 +310,8 @@ module HBFav2
       # button
       @usersButton.frame = [[10, @bookmarkItemView.bottom + 10], [self.frame.size.width - 20, 40]]
 
-      if UIDevice.currentDevice.ios7_or_later?
-        @usersButtonBorderTop.frame    = [[15, @usersButton.top], [self.right - 30, 1]]
-        @usersButtonBorderBottom.frame = [[15, @usersButton.bottom], [self.right - 30, 1]]
-      end
+      @usersButtonBorderTop.frame    = [[15, @usersButton.top], [self.right - 30, 1]]
+      @usersButtonBorderBottom.frame = [[15, @usersButton.bottom], [self.right - 30, 1]]
 
       @bodyView.contentSize = [self.frame.size.width, @usersButton.bottom + 142]
     end

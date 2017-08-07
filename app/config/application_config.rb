@@ -8,7 +8,7 @@ class ApplicationConfig
 
   def initialize
     @vars = MY_ENV
-    @is_ios7 = UIDevice.currentDevice.ios7_or_later?
+    @is_ios7 = true
   end
 
   def ios7_or_later?
@@ -16,18 +16,18 @@ class ApplicationConfig
   end
 
   def applicationFontOfSize(size)
-    ios7_or_later? ? UIFont.fontWithName("HelveticaNeue", size:size) : UIFont.systemFontOfSize(size)
+    UIFont.fontWithName("HelveticaNeue", size:size)
   end
 
   def boldApplicationFontOfSize(size)
-    ios7_or_later? ? UIFont.fontWithName("HelveticaNeue", size:size) : UIFont.boldSystemFontOfSize(size)
+    UIFont.fontWithName("HelveticaNeue", size:size)
   end
 
   def systemFontOfSize(size)
-    ios7_or_later? ? UIFont.fontWithName("HelveticaNeue", size:size) : UIFont.systemFontOfSize(size)
+    UIFont.fontWithName("HelveticaNeue", size:size)
   end
 
   def boldSystemFontOfSize(size)
-    ios7_or_later? ? UIFont.fontWithName("Helvetica-Bold", size:size) : UIFont.boldSystemFontOfSize(size)
+    UIFont.fontWithName("Helvetica-Bold", size:size)
   end
 end

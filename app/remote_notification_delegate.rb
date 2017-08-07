@@ -54,15 +54,6 @@ module HBFav2
             banner.detailTextLabel.font = UIFont.systemFontOfSize(13)
             banner.detailTextLabel.textColor = "#333333".uicolor
           end
-
-          ## 他の画面でローカルpushイベントを採れるように、発火
-          ## iOS 7 は Background Fetch に任せるので必要ない
-          if UIDevice.currentDevice.ios6_or_earlier?
-            notify = NSNotification.notificationWithName(
-              "applicationDidReceiveRemoteNotification", object:userInfo
-            )
-            NSNotificationCenter.defaultCenter.postNotification(notify)
-          end
         end
       when UIApplicationStateInactive then
         self.handleNotificationPayload(userInfo)
