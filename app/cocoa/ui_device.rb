@@ -12,12 +12,4 @@ class UIDevice
     end
     return @@gt[version]
   end
-
-  def ios7_or_later?
-    true
-  end
-
-  def ios8_or_later?
-    true
-  end
 end

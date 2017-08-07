@@ -8,11 +8,6 @@ class ApplicationConfig
 
   def initialize
     @vars = MY_ENV
-    @is_ios7 = true
-  end
-
-  def ios7_or_later?
-    @is_ios7
   end
 
   def applicationFontOfSize(size)
