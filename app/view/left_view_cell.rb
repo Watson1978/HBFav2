@@ -62,31 +62,16 @@ class LeftViewCell < UITableViewCell
   def drawRectContent(rect)
     size =  @title.sizeWithFont(ApplicationConfig.sharedConfig.applicationFontOfSize(18))
     title = @title.attrd.foreground_color([196, 204, 217].uicolor).font(ApplicationConfig.sharedConfig.applicationFontOfSize(18))
-
-    if not UIDevice.currentDevice.ios7_or_later?
-      title = title.shadow(@titleShadow)
-    end
-
+    title = title.shadow(@titleShadow)
     title.drawInRect([[self.imageView.right + 8, self.imageView.top + 4], size])
 
-    if UIDevice.currentDevice.ios7_or_later?
-      unless selected?
-        context = UIGraphicsGetCurrentContext()
-        [36, 42, 54].uicolor(1.0).setStroke
-        CGContextSetLineWidth(context, 1)
-        CGContextMoveToPoint(context, 42, 0)
-        CGContextAddLineToPoint(context, self.right, 0)
-        CGContextStrokePath(context)
-      end
-    else
-      unless selected?
-        context = UIGraphicsGetCurrentContext()
-        [62, 69, 84].uicolor(1.0).setStroke
-        CGContextSetLineWidth(context, 2)
-        CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, self.right, 0)
-        CGContextStrokePath(context)
-      end
+    unless selected?
+      context = UIGraphicsGetCurrentContext()
+      [36, 42, 54].uicolor(1.0).setStroke
+      CGContextSetLineWidth(context, 1)
+      CGContextMoveToPoint(context, 42, 0)
+      CGContextAddLineToPoint(context, self.right, 0)
+      CGContextStrokePath(context)
     end
   end
 end

@@ -1,9 +1,6 @@
 module HBFav2
-  class WebViewBridge < if UIDevice.currentDevice.ios8_or_later?
-                          WKWebView
-                        else
-                          UIWebView
-                        end
+  class WebViewBridge < WKWebView
+    # TODO: WKWebView を常に使うので、WebViewBridge が不要
 
     def self.factory(frame)
       if kind_of?(UIWebView)

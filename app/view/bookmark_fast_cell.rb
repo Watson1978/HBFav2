@@ -145,19 +145,11 @@ class BookmarkFastCell < UITableViewCell
     body_width = self.class.bodyWidth(self.frame.size.width)
     attributes = BookmarkLabelAttributes.sharedAttributes.attributes
 
-    if not UIDevice.currentDevice.ios7_or_later? and (self.selected? || self.highlighted?)
-      color = {
-        :date => '#fff',
-        :text => '#fff',
-        :link => '#fff',
-      }
-    else
-      color = {
-        :date => attributes[:date][:color],
-        :text => attributes[:name][:color],
-        :link => attributes[:title][:color],
-      }
-    end
+    color = {
+      :date => attributes[:date][:color],
+      :text => attributes[:name][:color],
+      :link => attributes[:title][:color],
+    }
 
     ## date
     if @labels[:date].present?

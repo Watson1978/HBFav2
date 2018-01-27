@@ -19,25 +19,6 @@ class HBFav2NavigationController < UINavigationController
     self.navigationBar.addGestureRecognizer(longPressGesture)
   end
 
-  def viewWillAppear(animated)
-    super
-
-    ## naviBar の上部を丸める
-    if not UIDevice.currentDevice.ios7_or_later? and self.rounded_corners
-      layer = self.navigationBar.layer
-      maskPath = UIBezierPath.bezierPathWithRoundedRect(
-        layer.bounds,
-        byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight),
-        cornerRadii:CGSizeMake(5.0, 5.0)
-      )
-      maskLayer = CAShapeLayer.alloc.init
-      maskLayer.frame = layer.bounds
-      maskLayer.path = maskPath.CGPath;
-      layer.addSublayer(maskLayer)
-      layer.mask = maskLayer
-    end
-  end
-
   def gestureRecognizerShouldBegin(gestureRecognizer)
     ## 戻るボタンらしきものを探す
     v = self.navigationBar.subviews.find do |subview|

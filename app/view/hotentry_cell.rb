@@ -134,21 +134,12 @@ class HotentryCell < UITableViewCell
   def drawRectContent(rect)
     attributes = BookmarkLabelAttributes.sharedAttributes.attributes
 
-    if not UIDevice.currentDevice.ios7_or_later? and (self.selected? || self.highlighted?)
-      color = {
-        :date => '#fff',
-        :text => '#fff',
-        :link => '#fff',
-        :host => '#fff',
-      }
-    else
-      color = {
-        :date => attributes[:date][:color],
-        :text => attributes[:name][:color],
-        :link => attributes[:hotentry_title][:color],
-        :host => attributes[:host][:color],
-      }
-    end
+    color = {
+      :date => attributes[:date][:color],
+      :text => attributes[:name][:color],
+      :link => attributes[:hotentry_title][:color],
+      :host => attributes[:host][:color],
+    }
 
     current_y = 10
 

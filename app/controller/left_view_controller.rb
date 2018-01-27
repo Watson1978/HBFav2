@@ -15,11 +15,7 @@ class LeftViewController < UITableViewController
     self.view.backgroundColor = [41, 47, 59].uicolor
     self.view.backgroundView = nil
 
-    if UIDevice.currentDevice.ios7_or_later?
-      self.view.separatorStyle = UITableViewCellSeparatorStyleNone
-    else
-      self.view.separatorColor = [36, 42, 54].uicolor
-    end
+    self.view.separatorStyle = UITableViewCellSeparatorStyleNone
   end
 
   def initialize_data_source
@@ -58,9 +54,7 @@ class LeftViewController < UITableViewController
     ]
 
     ## FIXME: ステータスバー分を空の row でごまかしている･･･
-    if UIDevice.currentDevice.ios7_or_later?
-      src.unshift({ :title => "", :blank => true })
-    end
+    src.unshift({ :title => "", :blank => true })
 
     return src
   end
@@ -78,7 +72,7 @@ class LeftViewController < UITableViewController
   end
 
   def rowForProfile
-    UIDevice.currentDevice.ios7_or_later? ? 1 : 0
+    1
   end
 
   def rowForTimeline
@@ -94,7 +88,7 @@ class LeftViewController < UITableViewController
   end
 
   def tableView(tableView, heightForRowAtIndexPath:indexPath)
-    if UIDevice.currentDevice.ios7_or_later? and indexPath.row == 0
+    if indexPath.row == 0
       21
     else
       super
@@ -126,11 +120,7 @@ class LeftViewController < UITableViewController
   def observeValueForKeyPath(keyPath, ofObject:object, change:change, context:context)
     if (ApplicationUser.sharedUser == object and keyPath == 'hatena_id')
       ## FIXME: 生データいじりすぎてて微妙
-      row = if UIDevice.currentDevice.ios7_or_later?
-              @dataSource[1]
-            else
-              @dataSource[0]
-            end
+      row = @dataSource[1]
 
       user = ApplicationUser.sharedUser.to_bookmark_user
       row[:title] = user.name
